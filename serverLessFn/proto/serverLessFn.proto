@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package serverLessFn;
+
+option go_package = "./proto;serverLessFn";
+
+service ServerLessFn {
+	rpc Deploy(Function) returns (FunctionResponse){}
+}
+message Function {
+	// function name
+	string name = 1;
+	// file name
+	string filePath = 2;
+}
+
+message FunctionResponse {
+	string url = 1;
+}
